@@ -1,0 +1,2 @@
+requests==2.11.1
+uritemplate==3.0.0
