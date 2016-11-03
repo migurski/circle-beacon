@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'Circle-Tickler',
-    version = '1.0.0',
+    version = '1.0.1',
     url = 'https://github.com/migurski/circle-tickler',
     author = 'Michal Migurski',
     author_email = 'mike-github@teczno.com',
