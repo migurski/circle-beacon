@@ -1,3 +1,4 @@
+from __future__ import print_function
 from argparse import ArgumentParser
 import requests, uritemplate
 
@@ -5,7 +6,7 @@ import requests, uritemplate
 BUILDS_URL = 'https://circleci.com/api/v1.1/project/{vcs_type}/{username}/{project}/tree/{branch}{?circle-token}{&filter,limit}'
 RETRY_URL = 'https://circleci.com/api/v1.1/project/{vcs_type}/{username}/{project}/{build_num}/retry{?circle-token}'
 
-parser = ArgumentParser(description='poot')
+parser = ArgumentParser(description='Retry the latest successful build in Circle CI.')
 
 parser.add_argument('owner', help='Github repository owner')
 parser.add_argument('repo', help='Github repository name')
@@ -23,17 +24,13 @@ def main():
     got = requests.get(url1)
     
     build = got.json()[0]
-    print build
-    print build['build_num']
+    print('Found previous build #{build_num} for {vcs_url}'.format(**build))
     
     args.update(build_num=build['build_num'])
     url2 = uritemplate.expand(RETRY_URL, args)
-    print(url2)
     
     posted = requests.post(url2)
-    
-    print posted
-    print posted.json()
+    print('Retrying at {build_url}'.format(**posted.json()))
 
 if __name__ == '__main__':
     exit(main())
