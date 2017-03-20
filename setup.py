@@ -1,16 +1,16 @@
 from setuptools import setup, find_packages
 
 setup(
-    name = 'Circle-Tickler',
-    version = '1.0.1',
-    url = 'https://github.com/migurski/circle-tickler',
+    name = 'Circle-Beacon',
+    version = '2.0.0',
+    url = 'https://github.com/migurski/circle-beacon',
     author = 'Michal Migurski',
     author_email = 'mike-github@teczno.com',
     description = '...',
     packages = find_packages(),
     entry_points = dict(
         console_scripts = [
-            'tickle-circle=tickle_circle:main',
+            'alert-circle=alert_circle:main',
         ]
     ),
     package_data = {},

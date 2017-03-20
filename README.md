@@ -1,9 +1,11 @@
-# Circle Tickler
+# Circle Beacon
 
-Tickles Circle CI to retry the last successful build on a named branch.
+Alerts Circle CI to retry the last successful build on a named branch.
 This is useful when Circle is used as part of a deploy pipeline, and
 you want to trigger a fresh build from an upstream repository.
 
 Use it like this:
 
-    tickle-circle <github owner> <github repo> <branch name> <circle API token>
+    alert-circle <github owner> <github repo> <branch name> <circle API token>
+
+Previously named Circle Tickler.
