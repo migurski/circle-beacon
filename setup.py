@@ -15,7 +15,7 @@ setup(
     ),
     package_data = {},
     install_requires = [
-        'requests == 2.11.1',
+        'requests == 2.20.0',
         'uritemplate == 3.0.0',
         ]
 )
